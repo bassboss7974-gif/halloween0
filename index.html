@@ -1,0 +1,508 @@
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HALLOWEEN — The History</title>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --bg: #11100e;
+  --surface: #1a1815;
+  --orange: #d87835;
+  --cream: #eee5d7;
+  --muted: #a49b8e;
+}
+
+body {
+  background: var(--bg);
+  color: var(--cream);
+  font-family: 'Kanit', sans-serif;
+  font-weight: 300;
+}
+
+nav {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 9%;
+  border-bottom: 1px solid #ffffff12;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  letter-spacing: 4px;
+  color: var(--orange);
+}
+
+nav a {
+  text-decoration: none;
+  color: #ddd3c5;
+  font-size: 13px;
+  margin-left: 30px;
+  transition: .3s;
+}
+
+nav a:hover {
+  color: var(--orange);
+}
+
+.hero {
+  min-height: 720px;
+  height: 100vh;
+  max-height: 950px;
+  display: flex;
+  align-items: center;
+  padding: 100px 12%;
+  position: relative;
+  background:
+  linear-gradient(90deg, rgba(10,9,8,.95), rgba(10,9,8,.45)),
+  url('https://images.unsplash.com/photo-1509557965875-b88c97052f0e?auto=format&fit=crop&w=2000&q=85') center/cover;
+}
+
+.hero-content {
+  max-width: 700px;
+}
+
+.tag {
+  color: var(--orange);
+  font-size: 12px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+}
+
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(65px, 10vw, 125px);
+  line-height: .9;
+  font-weight: 500;
+  letter-spacing: -3px;
+}
+
+.hero h1 span {
+  color: var(--orange);
+}
+
+.hero p {
+  color: #c1b7a9;
+  max-width: 480px;
+  line-height: 2;
+  margin: 30px 0;
+  font-size: 15px;
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  padding: 14px 30px;
+  border: 1px solid var(--orange);
+  color: var(--cream);
+  font-size: 13px;
+  letter-spacing: 1px;
+  transition: .3s;
+}
+
+.btn:hover {
+  background: var(--orange);
+  color: #111;
+}
+
+section {
+  padding: 110px 12%;
+}
+
+.section-label {
+  color: var(--orange);
+  font-size: 11px;
+  letter-spacing: 4px;
+  margin-bottom: 15px;
+}
+
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(42px, 6vw, 65px);
+  font-weight: 500;
+  margin-bottom: 25px;
+}
+
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.about img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  filter: brightness(.8);
+}
+
+.about-text p {
+  color: var(--muted);
+  line-height: 2.2;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.origin {
+  background: var(--surface);
+}
+
+.origin-intro {
+  max-width: 650px;
+  color: var(--muted);
+  line-height: 2;
+  margin-bottom: 55px;
+}
+
+.timeline {
+  border-left: 1px solid #68452d;
+  padding-left: 35px;
+  margin-left: 10px;
+}
+
+.event {
+  position: relative;
+  padding-bottom: 50px;
+}
+
+.event::before {
+  content: '';
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  background: var(--orange);
+  border-radius: 50%;
+  left: -40px;
+  top: 8px;
+}
+
+.year {
+  color: var(--orange);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+}
+
+.event h3 {
+  font-size: 19px;
+  font-weight: 400;
+  margin: 8px 0;
+}
+
+.event p {
+  color: var(--muted);
+  line-height: 2;
+  max-width: 650px;
+  font-size: 14px;
+}
+
+.traditions {
+  text-align: center;
+}
+
+.traditions .intro {
+  color: var(--muted);
+  margin-bottom: 50px;
+  line-height: 2;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  text-align: left;
+}
+
+.card {
+  background: var(--surface);
+  overflow: hidden;
+  transition: .4s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+.card img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  filter: brightness(.8);
+}
+
+.card-content {
+  padding: 25px;
+}
+
+.card h3 {
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 12px;
+}
+
+.card p {
+  font-size: 13px;
+  line-height: 2;
+  color: var(--muted);
+}
+
+.quote {
+  text-align: center;
+  background:
+  linear-gradient(#11100ed9,#11100ed9),
+  url('https://images.unsplash.com/photo-1509248961158-e54f6934749c?auto=format&fit=crop&w=1600&q=80') center/cover;
+  padding: 130px 15%;
+}
+
+.quote h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(38px, 6vw, 65px);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.quote p {
+  color: var(--orange);
+  margin-top: 25px;
+  letter-spacing: 3px;
+  font-size: 11px;
+}
+
+footer {
+  padding: 40px 10%;
+  border-top: 1px solid #ffffff15;
+  display: flex;
+  justify-content: space-between;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+@media(max-width: 768px) {
+  nav {
+    padding: 0 6%;
+  }
+
+  nav a {
+    margin-left: 12px;
+    font-size: 11px;
+  }
+
+  .hero {
+    padding: 100px 7%;
+  }
+
+  section {
+    padding: 75px 7%;
+  }
+
+  .about {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .about img {
+    height: 350px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  footer {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+@media(max-width: 420px) {
+  nav a {
+    margin-left: 8px;
+    font-size: 10px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="logo">HALLOWEEN.</div>
+  <div>
+    <a href="#home">HOME</a>
+    <a href="#history">HISTORY</a>
+    <a href="#traditions">CULTURE</a>
+  </div>
+</nav>
+
+<header class="hero" id="home">
+  <div class="hero-content">
+    <div class="tag">October 31 — A Night of Mystery</div>
+    <h1>THE NIGHT<br>OF <span>HALLOWEEN</span></h1>
+    <p>
+      Discover the history behind one of the world's most mysterious
+      celebrations. A journey through ancient traditions, forgotten
+      beliefs, and the origins of Halloween.
+    </p>
+    <a href="#history" class="btn">EXPLORE THE HISTORY</a>
+  </div>
+</header>
+
+<section class="about" id="history">
+  <div>
+    <div class="section-label">01 — INTRODUCTION</div>
+    <h2 class="section-title">What is Halloween?</h2>
+    <div class="about-text">
+      <p>
+        Halloween is an annual celebration observed on October 31.
+        It is known for costumes, carved pumpkins, haunted houses,
+        and traditions that embrace the mysterious side of the night.
+      </p>
+      <p>
+        However, Halloween is more than just a night of costumes
+        and candy. Its roots reach back thousands of years to
+        ancient Celtic traditions and the festival known as Samhain.
+      </p>
+    </div>
+  </div>
+  <img src="https://images.unsplash.com/photo-1509557965875-b88c97052f0e?auto=format&fit=crop&w=1000&q=85" alt="Halloween decorations">
+</section>
+
+<section class="origin">
+  <div class="section-label">02 — THE ORIGINS</div>
+  <h2 class="section-title">A History Through Time</h2>
+  <p class="origin-intro">
+    From an ancient Celtic festival to a worldwide cultural celebration,
+    Halloween has evolved through centuries of history and tradition.
+  </p>
+
+  <div class="timeline">
+    <div class="event">
+      <div class="year">2000+ Years Ago</div>
+      <h3>The Festival of Samhain</h3>
+      <p>
+        Ancient Celtic communities celebrated Samhain at the end
+        of the harvest season. They believed this was a time when
+        the boundary between the living and the dead became thin.
+      </p>
+    </div>
+
+    <div class="event">
+      <div class="year">8th Century</div>
+      <h3>Christian Traditions</h3>
+      <p>
+        November 1 became All Saints' Day in Western Christianity.
+        The evening before became known as All Hallows' Eve,
+        which eventually developed into the word Halloween.
+      </p>
+    </div>
+
+    <div class="event">
+      <div class="year">19th Century</div>
+      <h3>Halloween in America</h3>
+      <p>
+        Irish and Scottish immigrants brought Halloween customs
+        to North America. The celebration gradually became more
+        community-focused, with parties and seasonal activities.
+      </p>
+    </div>
+
+    <div class="event">
+      <div class="year">20th Century</div>
+      <h3>The Modern Celebration</h3>
+      <p>
+        Trick-or-treating, costumes, pumpkin carving, and
+        neighborhood celebrations became increasingly popular.
+      </p>
+    </div>
+
+    <div class="event">
+      <div class="year">Today</div>
+      <h3>A Worldwide Celebration</h3>
+      <p>
+        Halloween is celebrated in many countries through
+        costumes, decorations, entertainment, themed events,
+        and creative traditions.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="traditions" id="traditions">
+  <div class="section-label">03 — TRADITIONS & CULTURE</div>
+  <h2 class="section-title">The Halloween Traditions</h2>
+  <p class="intro">
+    Explore the symbols and traditions that make Halloween unique.
+  </p>
+
+  <div class="cards">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1574169208507-84376144848b?auto=format&fit=crop&w=800&q=80" alt="Carved pumpkin">
+      <div class="card-content">
+        <h3>Jack-o'-Lantern</h3>
+        <p>
+          Carved pumpkins are one of Halloween's most recognizable
+          symbols. The tradition developed from older practices
+          of carving turnips in Ireland and Scotland.
+        </p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1509557965875-b88c97052f0e?auto=format&fit=crop&w=800&q=80" alt="Halloween costumes">
+      <div class="card-content">
+        <h3>Costumes</h3>
+        <p>
+          Dressing up has historical connections to customs
+          associated with disguising oneself during seasonal
+          festivals and later became a popular form of celebration.
+        </p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1509248961158-e54f6934749c?auto=format&fit=crop&w=800&q=80" alt="Halloween night">
+      <div class="card-content">
+        <h3>Trick-or-Treating</h3>
+        <p>
+          Children visit houses wearing costumes and ask for
+          treats. This tradition evolved from older European
+          customs of going door to door for food and offerings.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="quote">
+  <h2>"Every shadow tells a story,<br>every night holds a mystery."</h2>
+  <p>OCTOBER 31 — HALLOWEEN</p>
+</div>
+
+<footer>
+  <div>HALLOWEEN. — THE HISTORY</div>
+  <div>© 2026 Halloween History. All rights reserved.</div>
+</footer>
+
+</body>
+</html>
